@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input } from 'antd';
-import { Form } from 'antd-modal-form';
+import { Action, Form } from 'antd-pro-max';
 
 const FormDemo = () => {
   // 该组件只有弹窗打开才会加载，关闭之后才卸载，确保 form 实例在关闭弹窗后卸载。
@@ -25,9 +25,9 @@ const FormDemo = () => {
 
 const Demo = () => {
   return (
-    <Form.Action action={<Button>open</Button>}>
+    <Action action={<Button>open</Button>}>
       <FormDemo />
-    </Form.Action>
+    </Action>
   );
 };
 

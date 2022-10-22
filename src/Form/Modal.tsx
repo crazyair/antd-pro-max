@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, Modal as AntdModal, ModalProps as AntdModalProps, FormProps, Form } from 'antd';
-import Action from './Action';
+import Action from '../Action';
 
 export type onCancel = (e?: React.MouseEvent<HTMLElement>) => void;
 
