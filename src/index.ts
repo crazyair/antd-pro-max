@@ -1,1 +1,1 @@
-export { default as Foo } from './Foo';
+export { default as ModalForm } from './ModalForm';
