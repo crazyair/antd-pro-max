@@ -1,3 +1,12 @@
+import { Button } from 'antd';
 import React from 'react';
 
-export default ({ title }: { title: string }) => <h1>{title}</h1>;
+const Demo = () => {
+  return (
+    <>
+      <Button>test</Button>
+    </>
+  );
+};
+
+export default Demo;
