@@ -5,16 +5,12 @@ import { Action } from 'antd-pro-max';
 const Child = () => {
   const { destroyCallback } = useContext(Action.Context);
 
-  return (
-    <div>
-      <Button onClick={destroyCallback}>卸载</Button>
-    </div>
-  );
+  return <Button onClick={destroyCallback}>卸载本组件</Button>;
 };
 
 const Demo = () => {
   return (
-    <Action action={<Button>加载</Button>}>
+    <Action action={<Button>加载子组件</Button>}>
       <Child />
     </Action>
   );

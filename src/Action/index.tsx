@@ -15,9 +15,12 @@ export interface ActionProps {
 export interface ActionContextProps {
   open?: boolean;
   onCancel: onCancel;
-  destroyCallback?: () => void;
+  destroyCallback: () => void;
 }
-export const Context = createContext<ActionContextProps>({ onCancel: () => undefined });
+export const Context = createContext<ActionContextProps>({
+  onCancel: () => undefined,
+  destroyCallback: () => undefined,
+});
 
 const Action = (props: ActionProps) => {
   const { action, onCancel, children, open: propsOpen } = props;
@@ -70,7 +73,11 @@ const Action = (props: ActionProps) => {
 
 // 重置
 const ContextReset = ({ children }: { children: React.ReactNode }) => {
-  return <Context.Provider value={{ onCancel: () => undefined }}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ onCancel: () => undefined, destroyCallback: () => undefined }}>
+      {children}
+    </Context.Provider>
+  );
 };
 
 Action.Context = Context;
