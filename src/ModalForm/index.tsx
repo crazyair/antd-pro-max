@@ -1,4 +1,5 @@
-import { Form as AntdForm, Input } from 'antd';
+import { Form as AntdForm } from 'antd';
+
 import Action from './Action';
 import Modal from './Modal';
 
@@ -6,16 +7,15 @@ type InternalFormType = typeof AntdForm;
 
 interface FormInterface extends InternalFormType {
   useForm: typeof AntdForm.useForm;
-  Modal: typeof Modal;
+  useWatch: typeof AntdForm.useWatch;
   Action: typeof Action;
-  Input: typeof Input;
+  Modal: typeof Modal;
 }
 
 const Form = AntdForm as FormInterface;
 Form.useForm = AntdForm.useForm;
-Form.Modal = Modal;
+Form.useWatch = AntdForm.useWatch;
 Form.Action = Action;
-
-Form.Input = Input;
+Form.Modal = Modal;
 
 export default Form;

@@ -26,13 +26,16 @@ function Modal<T = any>(props: ModalProps<T>) {
     okButtonProps,
     cancelText = '取消',
     cancelButtonProps,
+    destroyOnClose = true,
     renderFooter,
     ...rest
   } = { ...contextRest, ...props };
 
   const handleAfterClose = () => {
     afterClose?.();
-    destroyCallback?.();
+    if (destroyOnClose) {
+      destroyCallback?.();
+    }
   };
 
   // 关闭
@@ -40,16 +43,15 @@ function Modal<T = any>(props: ModalProps<T>) {
     onCancel?.(e);
   };
 
+  // 提交表单
   const handleOnFinish = async (values: T) => {
     await onFinish?.(values);
     handleOnCancel?.();
   };
-  let _children = children;
 
   return (
     <>
       <AntdModal
-        destroyOnClose
         modalRender={(node) => (
           <Form initialValues={initialValues} onFinish={handleOnFinish} {...formProps}>
             {node}
@@ -57,6 +59,7 @@ function Modal<T = any>(props: ModalProps<T>) {
         )}
         afterClose={handleAfterClose}
         onCancel={handleOnCancel}
+        destroyOnClose={destroyOnClose}
         footer={
           renderFooter ? (
             renderFooter({ onCancel: handleOnCancel })
@@ -73,7 +76,7 @@ function Modal<T = any>(props: ModalProps<T>) {
         }
         {...rest}
       >
-        <Action.ContextReset>{_children}</Action.ContextReset>
+        <Action.ContextReset>{children}</Action.ContextReset>
       </AntdModal>
     </>
   );
