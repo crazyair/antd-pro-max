@@ -1,12 +1,21 @@
-import { Button } from 'antd';
-import React from 'react';
+import { Form as AntdForm, Input } from 'antd';
+import Action from './Action';
+import Modal from './Modal';
 
-const Demo = () => {
-  return (
-    <>
-      <Button>test</Button>
-    </>
-  );
-};
+type InternalFormType = typeof AntdForm;
 
-export default Demo;
+interface FormInterface extends InternalFormType {
+  useForm: typeof AntdForm.useForm;
+  Modal: typeof Modal;
+  Action: typeof Action;
+  Input: typeof Input;
+}
+
+const Form = AntdForm as FormInterface;
+Form.useForm = AntdForm.useForm;
+Form.Modal = Modal;
+Form.Action = Action;
+
+Form.Input = Input;
+
+export default Form;

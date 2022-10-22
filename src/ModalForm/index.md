@@ -2,4 +2,4 @@
 
 Demo:
 
-<code src="./index.tsx" title="弹窗表单">
+<code src="./demo/index.tsx" title="弹窗表单">
