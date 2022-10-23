@@ -1,5 +1,7 @@
 ## Form.Modal
 
+### 使用
+
 <code src="./demo/base.tsx" title="基础弹窗表单">
 
 <code src="./demo/children.tsx" title="子组件弹窗表单">
@@ -14,3 +16,7 @@
 | onCancel | 关闭方法 | (e?: React.MouseEvent<\HTMLElement>) => void | - |
 | formProps | [Form API](#form-api) | - | - |
 | ... | [Antd Modal API](https://ant.design/components/modal-cn/#API) | - | - |
+
+### Form.Modal 实现原理
+
+<code src="./demo/index.tsx" title="实现原理">
