@@ -8,6 +8,6 @@ export default defineConfig({
   outputPath: 'docs-dist',
   // base: '/antd-pro-max/',
   // publicPath: '/antd-pro-max/',
-  exportStatic: {},
+  // exportStatic: {},
   // more config: https://d.umijs.org/config
 });
