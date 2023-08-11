@@ -8,6 +8,10 @@
     "types": ["jest"],
     "strict": true,
     "skipLibCheck": true,
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "antd-pro-max": ["src/index.ts"]
+    }
   }
 }

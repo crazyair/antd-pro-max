@@ -6,6 +6,8 @@
 
 <code src="./demo/children.tsx" title="子组件弹窗表单">
 
+<code src="./demo/menu.tsx" title="测试">
+
 ## API
 
 | 参数 | 说明 | 类型 | 默认值 |
