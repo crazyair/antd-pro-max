@@ -1,0 +1,14 @@
+name: DingTalk Release Notify
+
+on:
+  workflow_dispatch: # manual trigger workflow to nofify dingTalk
+  release:
+    types: [published, edited]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: visiky/dingtalk-release-notify@main
+        with:
+          DING_TALK_TOKEN: dd88546da75f580089cb9a8849dec0537004583babe2e55b09daddf001b46d03
