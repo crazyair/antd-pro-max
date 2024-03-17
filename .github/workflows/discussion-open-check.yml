@@ -13,6 +13,10 @@ jobs:
       contents: read # for visiky/dingtalk-release-notify to get latest release
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
       - name: send to dingtalk
         uses: visiky/dingtalk-release-notify@main
         with:
@@ -24,3 +28,4 @@ jobs:
           notify_body: '### 🔥 @${{ github.event.discussion.user.login }} 创建了讨论 \n ### [${{ github.event.discussion.title }}](${{ github.event.discussion.html_url }}) <hr />'
           notify_footer: '> 💬 欢迎前往 GitHub 进行讨论，社区可能需要你的帮助。'
           at_all: false # whether to ding everybody
+
