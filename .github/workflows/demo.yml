@@ -1,9 +1,13 @@
 name: DingTalk Release Notify
 
+# on:
+#   workflow_dispatch: # manual trigger workflow to nofify dingTalk
+#   release:
+#     types: [published, edited]
+
 on:
-  workflow_dispatch: # manual trigger workflow to nofify dingTalk
-  release:
-    types: [published, edited]
+  discussion:
+    types: [created, edited, locked, unlocked]
 
 jobs:
   build:
